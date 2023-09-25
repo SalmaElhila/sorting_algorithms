@@ -24,7 +24,7 @@ int *int_array_init(size_t size)
 }
 
 /**
- * count__sort - sorts an array of integers using counting sort
+ * count_sort - sorts an array of integers using counting sort
  *
  * @array: the array of integers
  * @size: the size of the array

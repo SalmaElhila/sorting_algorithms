@@ -20,7 +20,7 @@ void stupi_fy(int *array, int heap, int i, int size)
 	{
 		t = array[i], array[i] = array[lar], array[lar] = t;
 		print_array(array, size);
-		stupify(array, heap, lar, size);
+		stupi_fy(array, heap, lar, size);
 	}
 }
 

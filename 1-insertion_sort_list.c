@@ -22,25 +22,27 @@ void swap_node(listint_t **h, listint_t **n1, listint_t *n2)
 }
 
 /**
- * insertion_sort_list - sorts in ascending order
- * a doubly linked list of integers
- * @list: Dobuly linked list
+ * insertion_sort_list - Sorts a doubly linked list of integers
+ *                       using the insertion sort algorithm.
+ * @list: A pointer to the head of a doubly-linked list of integers.
+ *
+ * Description: Prints the list after each swap.
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *node;
+	listint_t *iter, *insert, *tmp;
 
-	if (list == NULL || (*list)->next == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
-	node = (*list)->next;
-	while (node)
+
+	for (iter = (*list)->next; iter != NULL; iter = tmp)
 	{
-		while ((node->prev) && (node->prev->n > node->n))
+		tmp = iter->next;
+		insert = iter->prev;
+		while (insert != NULL && iter->n < insert->n)
 		{
-			node = swap_node(node, list);
-			print_list(*list);
+			swap_node(list, &insert, iter);
+			print_list((const listint_t *)*list);
 		}
-		node = node->next;
 	}
 }
-

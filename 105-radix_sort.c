@@ -24,14 +24,14 @@ int *int_array_init(size_t size)
 }
 
 /**
- * counting_sort - sorts an array of integers using counting sort
+ * count__sort - sorts an array of integers using counting sort
  *
  * @array: the array of integers
  * @size: the size of the array
  * @exp: the exponent value of 10
  */
 
-void counting_sort(int *array, size_t size, int exp)
+void count_sort(int *array, size_t size, int exp)
 {
 	int *count = NULL, *output = NULL;
 	size_t i;
@@ -86,7 +86,7 @@ void radix_sort(int *array, size_t size)
 
 	for (exp = 1; k / exp > 0; exp *= 10)
 	{
-		counting_sort(array, size, exp);
+		count_sort(array, size, exp);
 		print_array(array, size);
 	}
 }

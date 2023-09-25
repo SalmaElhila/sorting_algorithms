@@ -46,13 +46,26 @@ void stupi_fy(int *array, int heap, int i, int size);
 void heap_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 int *int_array_init(size_t size);
-void counting_sort(int *array, size_t size, int exp);
+void count_sort(int *array, size_t size, int exp);
 void radix_sort(int *array, size_t size);
 void bitonic_merge(int *array, int low, int count, int dir, size_t size);
 void biton_sort(int *array, int low, int count, int dir, size_t size);
 void bitonic_sort(int *array, size_t size);
 
+/* Comparison direction macros for bitonic sort */
+#define UP 0
+#define DOWN 1
 
+/**
+ * enum bool - Enumeration of Boolean values.
+ * @false: Equals 0.
+ * @true: Equals 1.
+ */
+typedef enum bool
+{
+	false = 0,
+	true
+} bool;
 
 
 
